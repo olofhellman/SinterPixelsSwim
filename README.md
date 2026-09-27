@@ -1,0 +1,29 @@
+# SinterPixelsSwim
+
+A Swift package that implements a swift package for scripting the [SinterPixels app](https://tomographic.com/Sinterpixels.html)
+
+Here, 'Swim' is short for 'swift import'.  'Swimming' might be the term for using swift to script an application, as opposed to AppleScript.
+
+See the [SinterPixelsExtensions github repo](https://github.com/olofhellman/SinterPixelsExtensions) for code examples of using this swift package to write a swift app that targets SInterPixels
+
+Essentially, this package supports swift code like this, which makes a new SinterPixels document
+
+```
+	if let spApp = SPApp() {
+		let _ = spApp.activate()
+		
+		let props = SAERecord()
+		props.setParam(.pHeight, int:1000)
+		props.setParam(.pWidth, int:1000)
+		
+		let madeObject = spApp.make(new: SPDocument.fcc, container: NSAppleEventDescriptor.null(), props: props)
+	}
+```
+
+which is the analogous swift version of the AppleScript
+
+```
+    tell application "SinterPixels"
+        make new document with properties { height: 1000, width: 1000 }
+    end tell
+```

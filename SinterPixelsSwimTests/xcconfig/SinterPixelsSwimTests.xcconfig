@@ -1,0 +1,10 @@
+CODE_SIGN_ENTITLEMENTS = SinterPixelsSwimTests.entitlements
+CODE_SIGN_IDENTITY = -
+CODE_SIGN_STYLE = Manual
+INFOPLIST_FILE = SinterPixelsTests-Info.plist
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @loader_path/../Frameworks
+MACOSX_DEPLOYMENT_TARGET = 15.6
+PRODUCT_BUNDLE_IDENTIFIER = com.tomographic.sinterpixelsswim.tests
+PRODUCT_NAME = $(TARGET_NAME)
+SDKROOT = macosx
+SWIFT_VERSION = 6.0

@@ -1,0 +1,3 @@
+#include "SinterPixelsSwimTests.xcconfig"
+
+ENABLE_TESTABILITY = YES

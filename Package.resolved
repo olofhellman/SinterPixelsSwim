@@ -1,0 +1,15 @@
+{
+  "originHash" : "aa77604b3a8ed6afa17401995cbecabb16f871b5bd52e9644afe90eb95b47bf5",
+  "pins" : [
+    {
+      "identity" : "sinterappleevents",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/olofhellman/SinterAppleEvents.git",
+      "state" : {
+        "revision" : "0e690bd83ab9292018c33c6b0ad739a8b285a312",
+        "version" : "0.2.6"
+      }
+    }
+  ],
+  "version" : 3
+}
