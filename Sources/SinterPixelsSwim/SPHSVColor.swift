@@ -1,6 +1,6 @@
 //
 //  SPHSVColor.swift
-//  SinterPixelsBridge
+//  SinterPixelsSwim
 //
 //  Created by Olof Hellman on 7/12/26.
 //

@@ -1,6 +1,6 @@
 //
 //  SPScriptable.swift
-//  SinterPixelsBridge
+//  SinterPixelsSwim
 //
 //  Created by Olof Hellman on 7/13/26.
 //
