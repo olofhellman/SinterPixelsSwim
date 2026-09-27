@@ -1,13 +1,13 @@
 //
-//  SPBColor.swift
-//  SinterPixelsBridge
+//  SPColor.swift
+//  SinterPixelsSwim
 //
-//  Created by Olof Hellman on 7/12/26.
+//  Created by Olof Hellman on 9/27/26.
 //
 
 import Foundation
+import AppKit
 import SinterAppleEvents
-
 
 public extension FourCharCode {
     static var redComponent: FourCharCode { return FourCharCode(string: "redC")  }
@@ -18,9 +18,10 @@ public extension FourCharCode {
 
 public protocol SPColor {
     func asNSAppleEventDescriptor() -> NSAppleEventDescriptor
+    func asNSColor() -> NSColor
 }
 
-public struct SPBColor: SPColor {
+public struct SPRGBAColor: SPColor {
     let r: Double
     let g: Double
     let b: Double
@@ -31,6 +32,10 @@ public struct SPBColor: SPColor {
         self.g = g
         self.b = b
         self.a = a
+    }
+    
+    public func asNSColor() -> NSColor {
+        return NSColor(red: CGFloat(self.r), green: CGFloat(self.g), blue: CGFloat(self.b), alpha: CGFloat(self.a))
     }
     
     public func asNSAppleEventDescriptor() -> NSAppleEventDescriptor {

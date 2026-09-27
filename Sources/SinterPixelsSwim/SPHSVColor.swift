@@ -7,8 +7,8 @@
 
 
 import Foundation
+import AppKit
 import SinterAppleEvents
-
 
 public extension FourCharCode {
     static var hue: FourCharCode { return FourCharCode(string: "Hue ")  }
@@ -17,6 +17,7 @@ public extension FourCharCode {
 }
  
 public struct SPHSBColor: SPColor {
+    
     let h: Double
     let s: Double
     let b: Double
@@ -29,6 +30,10 @@ public struct SPHSBColor: SPColor {
         self.a = a
     }
     
+    public func asNSColor() -> NSColor {
+        return NSColor(calibratedHue: CGFloat(self.h), saturation: CGFloat(self.s), brightness: CGFloat(self.b), alpha: CGFloat(self.a))
+    }
+
     public func asNSAppleEventDescriptor() -> NSAppleEventDescriptor {
         let record = NSAppleEventDescriptor.record()
         record.setParam(NSAppleEventDescriptor(double: self.h), forKeyword: FourCharCode.hue)
