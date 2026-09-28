@@ -14,4 +14,10 @@ open class SPApp : SAEApp {
     public init?() {
         super.init(identifier: "com.tomographic.sinterpixels")
     }
+    
+    // app class should override this to return the appropriate SAEDocument subclass for each document
+    override public func documentInit(objectSpecifier: NSAppleEventDescriptor) -> SAEDocument {
+        return SPDocument(appContext: self, objSpec: objectSpecifier)
+    }
+
 }
