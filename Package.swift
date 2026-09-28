@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SinterPixelsSwim",
     platforms: [
-        .macOS(.v13)
+        .macOS(.v15)
     ],
     products: [
         .library(
@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-    .package(url: "https://github.com/olofhellman/SinterAppleEvents.git", from: "0.1.0")
+        .package(url: "https://github.com/olofhellman/SinterAppleEvents.git", from: "0.1.0")
     ],
     targets: [
         .target(
