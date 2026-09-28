@@ -18,13 +18,13 @@ public class SPDocument: SAEDocument, SAEContainer {
     //   return appContext.sendCreateElement(fcc: type.fcc, container: self.containerForCrelEvent, props: props) 
     //}
     
-    public func shapes() -> [SPShape] {
-        let shapes = self.elements(ofClass: SPShape.fcc)
+    public func shapes() async -> [SPShape] {
+        let shapes = await self.elements(ofClass: SPShape.fcc)
         return shapes.map { SPShape(appContext: appContext, objSpec: $0) }
     }
         
-    public func shape(atASIndex asIndex: Int) -> SPShape? {
-        guard let shp = element(ofClass: SPShape.fcc, atASIndex: asIndex) else {
+    public func shape(atASIndex asIndex: Int) async -> SPShape? {
+        guard let shp = await element(ofClass: SPShape.fcc, atASIndex: asIndex) else {
             return nil
         }
         return SPShape(appContext: appContext, objSpec: shp)

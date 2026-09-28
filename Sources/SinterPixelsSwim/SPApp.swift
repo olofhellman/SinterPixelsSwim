@@ -8,7 +8,7 @@
 import Foundation
 import SinterAppleEvents
 
-public class SPApp : SAEApp {
+open class SPApp : SAEApp {
     nonisolated(unsafe) static let shared: SPApp? = SPApp()
 
     public init?() {
