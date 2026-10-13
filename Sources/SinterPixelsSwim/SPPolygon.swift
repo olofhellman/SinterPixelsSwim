@@ -17,7 +17,8 @@ public extension FourCharCode {
     static var vertexArray: FourCharCode { return FourCharCode(string: "VtxA")  }
 }
 
-public class SPPolygon: SAEClass, SAEMakeable, SAEContainer {
+@MainActor
+public class SPPolygon: SAEObject, SAEMakeable, SAEContainer {
     
     static public var fcc: FourCharCode { .polygon }
 

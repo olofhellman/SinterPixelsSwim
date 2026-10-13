@@ -16,6 +16,7 @@ public extension FourCharCode {
     static var anchorCount: FourCharCode { return FourCharCode(string: "nAnk")  }
 }
 
-public class SPPath: SAEClass, SAEMakeable, SAEContainer {
+@MainActor
+public class SPPath: SAEObject, SAEMakeable, SAEContainer {
     static public var fcc: FourCharCode { .path }
 }
