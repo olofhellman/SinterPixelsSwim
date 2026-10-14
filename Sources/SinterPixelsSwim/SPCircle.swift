@@ -14,6 +14,10 @@ public extension FourCharCode {
     static var circle: FourCharCode { return FourCharCode(string: "Circ")  }
 }
 
-public class SPCircle: SAEObject {
+public class SPCircle: SAEObject, SAEMakeable {
     static public var fcc: FourCharCode { .circle }
+
+    required public init(appContext: SAEAppContext?, objSpec: NSAppleEventDescriptor) {
+        super.init(appContext: appContext, objSpec: objSpec)
+    }
 }
