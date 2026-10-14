@@ -24,5 +24,4 @@ open class SPApp : SAEApp {
     override public func documentInit(objectSpecifier: NSAppleEventDescriptor) -> SAEDocument {
         return SPDocument(appContext: self, objSpec: objectSpecifier)
     }
-
 }
