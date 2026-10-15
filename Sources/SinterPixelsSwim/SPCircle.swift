@@ -17,7 +17,7 @@ public extension FourCharCode {
 public class SPCircle: SAEObject, SAEMakeable {
     static public var fcc: FourCharCode { .circle }
 
-    required public init(appContext: SAEAppContext?, objSpec: NSAppleEventDescriptor) {
-        super.init(appContext: appContext, objSpec: objSpec)
+    required public init(appContext: SAEAppContext?, objectSpecifier: SAEObjectSpecifier) {
+        super.init(appContext: appContext, objectSpecifier: objectSpecifier)
     }
 }

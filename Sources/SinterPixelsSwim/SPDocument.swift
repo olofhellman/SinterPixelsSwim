@@ -19,14 +19,18 @@ public class SPDocument: SAEDocument, SAEContainer {
     //}
     
     public func shapes() async -> [SPShape] {
-        let shapes = await self.elements(ofClass: SPShape.fcc)
-        return shapes.map { SPShape(appContext: appContext, objSpec: $0) }
+        let shapeElements = await self.elements(ofClass: SPShape.fcc)
+        let shapes = shapeElements.compactMap { SAEObjectSpecifier(nsAppleEventDescriptor: $0) }
+        return shapes.map { SPShape(appContext: appContext, objectSpecifier: $0) }
     }
         
     public func shape(atASIndex asIndex: Int) async -> SPShape? {
         guard let shp = await element(ofClass: SPShape.fcc, atASIndex: asIndex) else {
             return nil
         }
-        return SPShape(appContext: appContext, objSpec: shp)
+        guard let shape = SAEObjectSpecifier(nsAppleEventDescriptor: shp) else {
+            return nil
+        }
+        return SPShape(appContext: appContext, objectSpecifier: shape)
     }
 }

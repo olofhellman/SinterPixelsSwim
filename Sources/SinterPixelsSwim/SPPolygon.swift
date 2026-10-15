@@ -22,7 +22,7 @@ public class SPPolygon: SAEObject, SAEMakeable, SAEContainer {
     
     static public var fcc: FourCharCode { .polygon }
 
-    required public init(appContext: SAEAppContext?, objSpec: NSAppleEventDescriptor) {
-        super.init(appContext: appContext, objSpec: objSpec)
+    required public init(appContext: SAEAppContext?, objectSpecifier: SAEObjectSpecifier) {
+        super.init(appContext: appContext, objectSpecifier: objectSpecifier)
     }
 }
